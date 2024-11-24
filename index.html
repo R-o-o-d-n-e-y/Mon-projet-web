@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Accueil - Mon site web</title>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">Rood</a>
+            </div>
+            <div class="buttons">
+                <a href="#" class="action-button" id="openMenuButton">☰</a>
+            </div>
+        </div>
+
+        
+        <div id="sideMenu" class="side-menu">
+            <span class="close-btn" id="closeMenu">&times;</span>
+            <div class="menu-content">
+                <a href="#" class="section" id="bouton-accueil">Accueil</a>
+                <a href="site/projets.html" class="section">Projets</a>
+                <a href="site/about.html" class="section">À propos</a>
+                <a href="mailto:chouterood@gmail.com" class="section">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    
+    <main class="hero">
+        <div class="hero-content hero-text hidden">
+            <h1>Bienvenue sur mon site web</h1>
+            <p>Découvrez mes projets, en savoir plus sur moi, ou contactez-moi directement.</p>
+            <p class="summary">
+                Je suis Choute Roodney Wilkens, élève en Secondaire 2 à l'Institution Saint-Louis de Gonzague et membre de la Fondation STO. Passionné par l'informatique, le développement de projets et la culture haïtienne, je m'engage à promouvoir et célébrer l'histoire de mon pays tout en contribuant à des initiatives ayant un impact positif sur la société. Découvrez-en plus sur mon parcours et mes projets.
+            </p>
+            <div class="hero-buttons">
+                <a href="site/projets.html" class="hero-button">Voir mes projets</a>
+                <a href="site/about.html" class="hero-button">En savoir plus</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+       
+        window.onload = () => {
+            const heroText = document.querySelector('.hero-text');
+            heroText.classList.add('visible');
+        };
+
+       
+        const openMenuButton = document.getElementById('openMenuButton');
+        const sideMenu = document.getElementById('sideMenu');
+        const closeMenuButton = document.getElementById('closeMenu');
+
+        openMenuButton.onclick = () => {
+            sideMenu.style.width = '250px';
+        };
+
+        closeMenuButton.onclick = () => {
+            sideMenu.style.width = '0';
+        };
+
+        
+        document.getElementById('bouton-accueil').addEventListener('click', function (event) {
+            event.preventDefault(); 
+            location.reload(); 
+        });
+    </script>
+</body>
+
+</html>
